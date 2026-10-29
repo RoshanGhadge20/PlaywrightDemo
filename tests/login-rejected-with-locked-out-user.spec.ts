@@ -17,7 +17,6 @@ test.describe('Login Authentication', () => {
         await expect(page.locator('[data-test="username"]')).toHaveValue('locked_out_user');
         await expect(page.locator('[data-test="password"]')).toHaveValue('secret_sauce');
 
-        // 3. Select Login and verify authentication is denied with the correct error.
         await page.locator('[data-test="login-button"]').click();
         await expect(page).toHaveURL('https://www.saucedemo.com/');
         await expect(page.locator('[data-test="error"]')).toHaveText(
